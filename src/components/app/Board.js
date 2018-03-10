@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Square from './square';
+import { winnerWinnerChickenDinner } from './actions';
 import '../../index.css';
 
 export default class Board extends PureComponent {
@@ -25,7 +26,13 @@ export default class Board extends PureComponent {
   }
 
   render() {
-    const status = 'Next player:' + (this.state.xIsNext ? 'X' : 'O');
+    const winner = winnerWinnerChickenDinner(this.state.squares);
+    let status;
+    if(winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player:' + (this.state.xIsNext ? 'X' : 'O');
+    }
 
     return (
       <div id="container">
