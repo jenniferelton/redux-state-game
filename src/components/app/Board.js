@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import Square from './square';
+import '../../index.css';
 
-class Board extends PureComponent {
+export default class Board extends PureComponent {
   renderSquare(i) {
     return <Square value={i}/>;
   }

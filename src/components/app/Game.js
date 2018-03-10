@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
+// import { connect } from 'react-redux';
 import Board from './Board';
+import '../../index.css';
 
-export default class App extends PureComponent {
+export default class Game extends PureComponent {
 
   render() {
 
@@ -10,11 +12,13 @@ export default class App extends PureComponent {
         <div className="game-board">
           <Board/>
         </div>
-       
+        <div className="game-info">
+        </div>
       </section>
     );
   }
 }
 
-
-
+// export default connect(
+//   ()
+// )
