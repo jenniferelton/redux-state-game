@@ -22,6 +22,8 @@ body {
   border: 1px solid black;
   width: 88px;
   height: 88px;
+  font-size: x-large;
+  font-weight: bolder;
   &:hover {
     background-color: darkgrey;
   }
