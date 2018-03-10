@@ -6,6 +6,7 @@ import '../../index.css';
 export default class Game extends PureComponent {
 
   render() {
+    
 
     return (
       <section className="game">
