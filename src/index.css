@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 
 * {
   box-sizing: border-box;
@@ -6,8 +9,6 @@
 }
 body {
   text-align: center;
-  height: 100%;
-  
   background: white;
   color: black;
 }
@@ -19,7 +20,7 @@ body {
 }
 
 .board-row1 {
-  margin-top: 80px;
+  margin-top: 50px;
   display: block;
  
 } 
@@ -31,4 +32,24 @@ body {
   &:hover {
     background-color: darkgrey;
   }
+}
+
+button {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px 1px 1px 1px;
+  color: black;
+  background-color: #8dd1d6;
+  text-transform: uppercase;
+  padding: .3rem .5rem;
+  transition: 0.3s ease all;
+  cursor: pointer;
+  &:hover {
+    background-color: blue;
+  }
+}
+
+li {
+  margin-top:12px;
 }

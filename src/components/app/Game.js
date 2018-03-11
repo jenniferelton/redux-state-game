@@ -48,8 +48,8 @@ export default class Game extends PureComponent {
     const winner = winnerWinnerChickenDinner(current.squares);
     const moves = history.map((step, move) => {
       const desc = move ?
-        'Go to move #' + move :
-        'Go to game start';
+        'Move #' + move :
+        'Start New Game';
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -70,7 +70,7 @@ export default class Game extends PureComponent {
         </div>
         <div className="game-info">
           <div>{ status }</div>
-          <ol>{moves}</ol>
+          <ol className="number">{moves}</ol>
         </div>
       </section>
     );
