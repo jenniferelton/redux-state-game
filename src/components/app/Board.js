@@ -1,39 +1,17 @@
 import React, { PureComponent } from 'react';
 import Square from './square';
-import { winnerWinnerChickenDinner } from './actions';
 import '../../index.css';
 
 export default class Board extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: Array(9).fill(null),
-      xIsNext: true,
-    };
-  }
 
-  handleClick(i) {
-    const squares = this.state.squares.slice();
-    squares[i] =  this.state.xIsNext ? 'X' : 'O';
-    this.setState({
-      squares: squares,
-      xIsNext: !this.state.xIsNext,
-    });
-  }
-  
   renderSquare(i) {
-    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)}/>;
+    return (
+      <Square value={this.props.squares[i]}
+        onClick={() => this.props.onClick(i)}/>
+    );
   }
 
   render() {
-    const winner = winnerWinnerChickenDinner(this.state.squares);
-    let status;
-    if(winner) {
-      status = 'Winner: ' + winner;
-    } else {
-      status = 'Next player:' + (this.state.xIsNext ? 'X' : 'O');
-    }
-
     return (
       <div id="container">
         <div className="status">{status}</div>
