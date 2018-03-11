@@ -13,7 +13,7 @@ export default class Board extends PureComponent {
 
   render() {
     return (
-      <section id="container">
+      <section>
         <div className="status">{status}</div>
         <div className="board-row1">
           {this.renderSquare(0)}

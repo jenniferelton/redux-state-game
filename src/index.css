@@ -7,6 +7,14 @@ html {
   padding: 0;
   margin: 0;
 }
+
+header {
+  height: auto;
+  padding: 1rem;
+  font-weight: bolder;
+  background-color: #8dd1d6;
+  border-bottom: 4px solid #D53500;
+}
 body {
   text-align: center;
   background: white;
@@ -20,7 +28,7 @@ body {
 }
 
 .board-row1 {
-  margin-top: 50px;
+  margin-top: 20px;
   display: block;
  
 } 
@@ -30,26 +38,33 @@ body {
   font-size: x-large;
   font-weight: bolder;
   &:hover {
-    background-color: darkgrey;
+    background-color:#61b8cc ;
   }
 }
+
 
 button {
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: 1px;
   border: 1px 1px 1px 1px;
-  color: black;
+  color: #D53500;
   background-color: #8dd1d6;
   text-transform: uppercase;
   padding: .3rem .5rem;
   transition: 0.3s ease all;
   cursor: pointer;
   &:hover {
-    background-color: blue;
+    background-color: #61b8cc;
   }
 }
 
 li {
   margin-top:12px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color:#D53500;
+  text-shadow: 2px 2px 2px #000;
 }
