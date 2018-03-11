@@ -18,8 +18,12 @@ body {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+.board-row1 {
+  margin-top: 80px;
+  display: block;
+ 
+} 
 .square {
-  border: 1px solid black;
   width: 88px;
   height: 88px;
   font-size: x-large;
