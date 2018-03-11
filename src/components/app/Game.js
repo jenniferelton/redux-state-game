@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
-// import { connect } from 'react-redux';
 import { winnerWinnerChickenDinner } from './actions';
 import Board from './Board';
-// import Square from './Square';
 import '../../index.css';
 
 export default class Game extends PureComponent {
@@ -75,11 +73,10 @@ export default class Game extends PureComponent {
           <div>{ status }</div>
           <ol className="number">{moves}</ol>
         </div>
+        <footer>
+          <small>(c) Jacob & Jenny</small>
+        </footer>
       </section>
     );
   }
 }
-
-// export default connect(
-//   ()
-// )

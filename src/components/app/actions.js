@@ -1,5 +1,3 @@
-
-
 export function winnerWinnerChickenDinner(squares) {
   const lines = [
     [0, 1, 2],
