@@ -1,4 +1,23 @@
-export function winnerWinnerChickenDinner(squares) {
+import { WINNER_WINNER_CHICKEN_DINNER, activePlayer, nextPlayer } from './reducers';
+
+export function takeTurns() {
+  return (dispatch, getState) => {
+    let { squares } = getState().game;
+    const winner = checkWinner(squares);
+
+    squares = getState().game.squares;
+    
+    if(winner !== null()) {
+      dispatch({
+        type: WINNER_WINNER_CHICKEN_DINNER,
+        payload: winner
+      });
+    }
+  };
+}
+
+
+export function checkWinner(squares) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],

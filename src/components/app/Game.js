@@ -63,7 +63,7 @@ export default class Game extends PureComponent {
     return (
       <section className="game">
         <header>
-          <h1>J & J Tic Tac Toe</h1>
+          <h1> J Tic Tac Toe</h1>
         </header>
         <div className="game-board">
           <Board squares={current.squares}
@@ -74,7 +74,7 @@ export default class Game extends PureComponent {
           <ol className="number">{moves}</ol>
         </div>
         <footer>
-          <small>(c) Jacob & Jenny</small>
+          <small>(c) Jenny</small>
         </footer>
       </section>
     );
