@@ -8,6 +8,12 @@ body {
   font-size: 20px;
 }
 
+.clip {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7*/
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 .grid, .panel {
   padding-top: 20px;
   width: 360px;
@@ -52,10 +58,5 @@ body {
 }
 
 
-.clip {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7*/
-  clip: rect(1px, 1px, 1px, 1px);
-}
 
 

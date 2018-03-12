@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './app/Game';
+import store from './store';
+import StateTicTacToe from  './container/stateTicTac';
 import { Provider } from 'react-redux';
-import store from './store/store';
-import './index.css';
+
+require('./main.css');
 
 ReactDOM.render( 
   <Provider store={store}>
-    <Game/>,
+    <StateTicTacToe/>,
   </Provider>,
   document.getElementById('root')
 );
