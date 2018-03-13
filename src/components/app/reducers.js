@@ -6,7 +6,6 @@ export const TIE = 'TIE';
 export const initialState = {
   squares: Array(9).fill(null),
   activePlayer: 'X',
-  nextPlayer: '0',
   winner: '',
   xWins: 0,
   oWins: 0,

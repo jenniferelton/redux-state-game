@@ -46,6 +46,7 @@ export function checkWinner(squares) {
   return null;
 }
 
+
 export function reset() {
   return (dispatch, getState) => {
     const { winner } = getState().game;

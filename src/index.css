@@ -28,12 +28,6 @@ body {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* .board-row1 {
-  margin-top: 20px;
-  display: block;
- 
-}  */
-
 .board-row:after {
   clear: both;
   content: "";
@@ -42,8 +36,8 @@ body {
 
 .square {
   float: left;
-  width: 88px;
-  height: 88px;
+  width: 100px;
+  height: 100px;
   margin: 0;
   margin-right: -1px;
   margin-top: -1px;
@@ -56,10 +50,17 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 60px;
+}
+
+.winner {
+  font-size: 1.5rem;
+  font-style: bolder;
+  color:#D53500;
+  margin-bottom: 2px;
 }
 button {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -74,7 +75,6 @@ button {
     background-color: #61b8cc;
   }
 }
-
 
 li {
   margin-top:12px;

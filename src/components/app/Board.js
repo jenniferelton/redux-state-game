@@ -27,7 +27,7 @@ class Board extends PureComponent {
     const xWins = (this.props.xWins);
     const oWins = (this.props.oWins);
     const winResult = (this.props.winner !== 'no winner')
-      ? <section><span>{this.props.winner} is the winner!</span></section>
+      ? <section><span className="winner">{this.props.winner} is the winner!</span></section>
       : null;
     return (
       <section>
