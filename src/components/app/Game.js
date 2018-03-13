@@ -12,8 +12,10 @@ class Game extends PureComponent {
         <header>
           <h1> J&J Tic Tac Toe</h1>
         </header>
-        <div className="game-board">
-          <Board/>
+        <div className="container">
+          <div className="game-board">
+            <Board/>
+          </div>
         </div>
         <div className="game-info">
           <div></div>

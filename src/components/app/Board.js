@@ -23,10 +23,9 @@ class Board extends PureComponent {
   }
 
   render() {
-
+    
     const winResult = (this.props.winner !== 'no winner')
-      ? <section><span>{this.props.winner} is the winner</span>
-        <button className="button" onClick={() => this.handleReset()}>RESET</button></section>
+      ? <section><span>{this.props.winner} is the winner!</span></section>
       : null;
     return (
       <section>
@@ -47,6 +46,7 @@ class Board extends PureComponent {
             {this.renderSquare(7)}
             {this.renderSquare(8)}
           </div>
+          <button className="button" onClick={() => this.handleReset()}>RESET</button>
         </div>
       </section>
     );
