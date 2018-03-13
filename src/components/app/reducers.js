@@ -17,21 +17,19 @@ export default function game(state = initialState, { type, payload }) {
   switch(type) {
     case CHOICE: {
       let updatedGame = [...state.squares];
-      const { activePlayer, i } = payload;
+      console.log(state.squares);
+      const { activePlayer, id } = payload;
 
-      
-      if(updatedGame[i] !== null) return state;
-      if(state.gameOver === true) return state;
-      updatedGame[i] = activePlayer;
-      
       const nextPlayer = (activePlayer === 'X') ? 'O' : 'X';
-      
 
+      if(updatedGame[id] !== null) return state;
+      if(state.gameOver === true) return state;
+      updatedGame[id] = activePlayer;
+      
       return {
         ...state, 
         squares: updatedGame,
         activePlayer: nextPlayer
-      
       };
     }
     case WINNER_WINNER_CHICKEN_DINNER:{
@@ -56,6 +54,13 @@ export default function game(state = initialState, { type, payload }) {
         oWins
       };
     } 
+
+    case TIE:
+      return {
+        ...state,
+        tie: true,
+        gameOver: true
+      };
 
     case RESET: {
       let newActivePlayer = state.activePlayer;

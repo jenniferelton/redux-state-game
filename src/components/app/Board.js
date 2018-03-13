@@ -6,19 +6,19 @@ import { takeTurns, reset } from './actions';
 
 class Board extends PureComponent {
 
-  handleClick(i) {
-    this.props.takeTurns(i);
-  } 
+  handleClick(id) {
+    this.props.takeTurns(id);
+  }
 
   handleReset() {
     this.props.reset();
   }
 
-  renderSquare(i) {
+  renderSquare(id) {
     return (
-      <Square value={this.props.squares[i]}
-        index={i}
-        onClick={(y) => this.props.onClick(y)}/>
+      <Square value={this.props.squares[id]}
+        index={id}
+        onClick={() => this.handleClick(id)}/>
     );
   }
 
@@ -30,7 +30,7 @@ class Board extends PureComponent {
       : null;
     return (
       <section>
-        <div className="status">{status}</div>
+        <div className="status">{winResult}</div>
         <div className="game">
           <div className="board-row">
             {this.renderSquare(0)}
@@ -57,18 +57,18 @@ function mapStateToProps(state) {
   return {
     squares: state.game.squares,
     winner: state.game.winner,
-    xWins: state.games.xWins,
-    oWins: state.games.oWins,
-    activePlayer: state.games.activePlayer
+    xWins: state.game.xWins,
+    oWins: state.game.oWins,
+    activePlayer: state.game.activePlayer
   };
 }
 function mapDispatchToProps(dispatch) {
   return {
-    takeTurns(i) {
-      dispatch(takeTurns(i));
+    takeTurns(id) {
+      dispatch(takeTurns(id));
     },
-    reset(i) {
-      dispatch(takeTurns(i));
+    reset() {
+      dispatch(reset());
     }
   };
 }

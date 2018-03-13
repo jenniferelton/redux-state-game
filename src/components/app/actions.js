@@ -1,4 +1,4 @@
-import { CHOICE, RESET, WINNER_WINNER_CHICKEN_DINNER } from './reducers';
+import { CHOICE, RESET, WINNER_WINNER_CHICKEN_DINNER, TIE } from './reducers';
 
 export function takeTurns(id) {
   return (dispatch, getState) => {
@@ -11,16 +11,20 @@ export function takeTurns(id) {
     const { squares } = getState().game;
     const winner = checkWinner(squares);
 
-    
-    if(winner !== null()) {
+    if(winner !== null) {
       dispatch({
         type: WINNER_WINNER_CHICKEN_DINNER,
         payload: winner
       });
     }
+
+    if(squares.indexOf(null) === -1 && winner === null) {
+      dispatch({
+        type: TIE
+      });
+    }
   };
 }
-
 
 export function checkWinner(squares) {
   const lines = [
