@@ -19,7 +19,9 @@ class Game extends PureComponent {
         </div>
         <div className="game-info">
           <div></div>
-          <ol></ol>
+          <ol>
+            
+          </ol>
         </div>
         <footer>
           <small>(c) Jacob & Jenny</small>

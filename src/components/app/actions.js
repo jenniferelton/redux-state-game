@@ -8,6 +8,8 @@ export function takeTurns(id) {
       payload: { activePlayer, id }
     });
 
+  
+
     const { squares } = getState().game;
     const winner = checkWinner(squares);
 
@@ -45,6 +47,7 @@ export function checkWinner(squares) {
   }
   return null;
 }
+
 
 export function reset() {
   return (dispatch, getState) => {

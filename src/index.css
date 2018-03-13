@@ -36,8 +36,8 @@ body {
 
 .square {
   float: left;
-  width: 88px;
-  height: 88px;
+  width: 100px;
+  height: 100px;
   margin: 0;
   margin-right: -1px;
   margin-top: -1px;

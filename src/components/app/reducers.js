@@ -6,7 +6,6 @@ export const TIE = 'TIE';
 export const initialState = {
   squares: Array(9).fill(null),
   activePlayer: 'X',
-  nextPlayer: '0',
   winner: '',
   xWins: 0,
   oWins: 0,
@@ -17,7 +16,6 @@ export default function game(state = initialState, { type, payload }) {
   switch(type) {
     case CHOICE: {
       let updatedGame = [...state.squares];
-      console.log(state.squares);
       const { activePlayer, id } = payload;
 
       const nextPlayer = (activePlayer === 'X') ? 'O' : 'X';
