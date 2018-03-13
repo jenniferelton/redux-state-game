@@ -24,12 +24,15 @@ class Board extends PureComponent {
 
   render() {
     
+    const xWins = (this.props.xWins);
+    const oWins = (this.props.oWins);
     const winResult = (this.props.winner !== 'no winner')
       ? <section><span>{this.props.winner} is the winner!</span></section>
       : null;
     return (
       <section>
         <div className="status">{winResult}</div>
+        <div><p>X wins: {xWins}</p><p>O wins: {oWins}</p></div>
         <div className="game">
           <div className="board-row">
             {this.renderSquare(0)}
