@@ -31,7 +31,7 @@ class Board extends PureComponent {
       ? <section><span className="winner">{this.props.winner} is the winner!</span></section>
       : null;
     const tieResult = (tie)
-      ? <section>TIE</section>
+      ? <section className="tie">A TIE!</section>
       : null;
     return (
       <section>

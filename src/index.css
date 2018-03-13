@@ -59,6 +59,14 @@ body {
   color:#D53500;
   margin-bottom: 2px;
 }
+
+.tie {
+  font-size: 1.5rem;
+  font-style: bolder;
+  color:#D53500;
+  margin-bottom: 2px;
+
+}
 button {
   margin-top: 10px;
   font-size: .8rem;
