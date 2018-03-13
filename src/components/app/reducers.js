@@ -1,6 +1,7 @@
 export const CHOICE = 'CHOICE';
 export const WINNER_WINNER_CHICKEN_DINNER = 'WINNER_WINNER_CHICKEN_DINNER';
-
+export const RESET = 'RESET';
+export const TIE = 'TIE';
 
 export const initialState = {
   squares: Array(9).fill(null),
@@ -55,7 +56,30 @@ export default function game(state = initialState, { type, payload }) {
         oWins
       };
     } 
+
+    case RESET: {
+      let newActivePlayer = state.activePlayer;
+      if(state.tie === false) {
+        newActivePlayer = (state.winner === 'X') ? 'O' : 'X';
+      }
+      else {
+        newActivePlayer = (state.activePlayer === 'X') ? 'O' : 'X';
+      }
+
+      const newSquares = Array(9).fill(null);
+
+      return {
+        ...state,
+        squares: newSquares,
+        activePlayer: newActivePlayer,
+        gameOver: false,
+        tie: false,
+        winner: 'no winner'
+      };
+    }
     default:
       return state;
   }
 } 
+
+

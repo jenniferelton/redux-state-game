@@ -1,4 +1,4 @@
-import { WINNER_WINNER_CHICKEN_DINNER } from './reducers';
+import { CHOICE, RESET, WINNER_WINNER_CHICKEN_DINNER } from './reducers';
 
 export function takeTurns(id) {
   return (dispatch, getState) => {
@@ -40,4 +40,15 @@ export function checkWinner(squares) {
     }
   }
   return null;
+}
+
+export function reset() {
+  return (dispatch, getState) => {
+    const { winner } = getState().game;
+
+    dispatch({
+      type: RESET,
+      payload: winner
+    });
+  };
 }
