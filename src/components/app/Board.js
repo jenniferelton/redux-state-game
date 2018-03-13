@@ -26,12 +26,16 @@ class Board extends PureComponent {
     
     const xWins = (this.props.xWins);
     const oWins = (this.props.oWins);
-    const winResult = (this.props.winner !== 'no winner')
+    const tie = (this.props.tie);
+    const winResult = (this.props.winner !== '')
       ? <section><span className="winner">{this.props.winner} is the winner!</span></section>
+      : null;
+    const tieResult = (tie)
+      ? <section>TIE</section>
       : null;
     return (
       <section>
-        <div className="status">{winResult}</div>
+        <div className="status">{winResult}{tieResult}</div>
         <div><p>X wins: {xWins}</p><p>O wins: {oWins}</p></div>
         <div className="game">
           <div className="board-row">
@@ -62,7 +66,8 @@ function mapStateToProps(state) {
     winner: state.game.winner,
     xWins: state.game.xWins,
     oWins: state.game.oWins,
-    activePlayer: state.game.activePlayer
+    activePlayer: state.game.activePlayer,
+    tie: state.game.tie
   };
 }
 function mapDispatchToProps(dispatch) {
