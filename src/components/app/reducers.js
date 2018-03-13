@@ -31,7 +31,7 @@ export default function game(state = initialState, { type, payload }) {
       };
     }
     case WINNER_WINNER_CHICKEN_DINNER:{
-      // if(state.gameOver === true) return state;
+      if(state.gameOver === true) return state;
       
       let xWins = state.xWins;
       let oWins = state.oWins;
@@ -77,7 +77,7 @@ export default function game(state = initialState, { type, payload }) {
         activePlayer: newActivePlayer,
         gameOver: false,
         tie: false,
-        winner: 'no winner'
+        winner: ''
       };
     }
     default:

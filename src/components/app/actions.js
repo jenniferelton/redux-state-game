@@ -9,6 +9,7 @@ export function takeTurns(id) {
     });
 
     const { squares, xWins, oWins } = getState().game;
+    console.log(squares);
     const winner = checkWinner(squares);
 
     if(winner !== null) {
@@ -18,7 +19,8 @@ export function takeTurns(id) {
       });
     }
 
-    if(squares.indexOf(null) === -1 && winner === null) {
+    if(squares.includes(null) === false && winner === null) {
+      console.log('tie');
       dispatch({
         type: TIE
       });
