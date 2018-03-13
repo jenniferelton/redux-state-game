@@ -1,11 +1,16 @@
-import { WINNER_WINNER_CHICKEN_DINNER, activePlayer, nextPlayer } from './reducers';
+import { WINNER_WINNER_CHICKEN_DINNER } from './reducers';
 
-export function takeTurns() {
+export function takeTurns(id) {
   return (dispatch, getState) => {
-    let { squares } = getState().game;
+    const { activePlayer } = getState().game;
+    dispatch({
+      type: CHOICE,
+      payload: { activePlayer, id }
+    });
+
+    const { squares } = getState().game;
     const winner = checkWinner(squares);
 
-    squares = getState().game.squares;
     
     if(winner !== null()) {
       dispatch({
