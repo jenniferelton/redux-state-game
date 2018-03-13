@@ -8,15 +8,13 @@ export function takeTurns(id) {
       payload: { activePlayer, id }
     });
 
-  
-
-    const { squares } = getState().game;
+    const { squares, xWins, oWins } = getState().game;
     const winner = checkWinner(squares);
 
     if(winner !== null) {
       dispatch({
         type: WINNER_WINNER_CHICKEN_DINNER,
-        payload: winner
+        payload: winner, xWins, oWins
       });
     }
 
