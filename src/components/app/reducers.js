@@ -31,6 +31,7 @@ export default function game(state = initialState, { type, payload }) {
         activePlayer: nextPlayer
       };
     }
+
     case WINNER_WINNER_CHICKEN_DINNER:{
       if(state.gameOver === true) return state;
       
@@ -81,9 +82,28 @@ export default function game(state = initialState, { type, payload }) {
         winner: ''
       };
     }
+  }
+  
+  export function winner(state = null, { type, payload }) {
+    switch(type) {
+      case GAME_END:
+      return payload.results;
+      case MATCH_END:
+      case GAME_NEW:
+      return null;
     default:
+    return state;
+  }
+}
+
+export function matches(state = [], { type, payload }) {
+  switch(type) {
+    case MATCH_END:
+      return [...state, payload];
+      case MATCHES_LOAD:
+      return payload;
+      default:
       return state;
   }
+}
 } 
-
-
