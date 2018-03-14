@@ -2,6 +2,8 @@ export const CHOICE = 'CHOICE';
 export const WINNER_WINNER_CHICKEN_DINNER = 'WINNER_WINNER_CHICKEN_DINNER';
 export const RESET = 'RESET';
 export const TIE = 'TIE';
+export const MATCH_END = 'MATCH_END';
+export const MATCH_LOAD = 'MATCH_LOAD';
 
 export const initialState = {
   squares: Array(9).fill(null),
@@ -80,6 +82,30 @@ export default function game(state = initialState, { type, payload }) {
         winner: ''
       };
     }
+
+    export function matches(state = [], { type, payload }) {
+      switch(type) {
+        case MATCH_END:
+          return [...state, payload];
+        case MATCHES_LOAD:
+        return payload;
+      default:
+      return state;
+      }
+    }
+
+    export function winner(state = null, { type, payload }) {
+      switch(type) {
+        case GAME_END:
+        return payload.results;
+        case MATCH_END:
+        case GAME_NEW:
+        return null;
+        default:
+        return state;
+      }
+    }
+    
     default:
       return state;
   }
