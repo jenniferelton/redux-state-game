@@ -16,6 +16,10 @@ header {
   background-color: #8dd1d6;
   border-bottom: 4px solid #D53500;
 }
+
+img {
+  position: right;
+}
 body {
   text-align: center;
   background: white;
