@@ -21,7 +21,7 @@ class GameHistory extends PureComponent {
           {leaderBoardKeys.length > 0 ? leaderBoardKeys.map((arb, i) => {
             return <li key={ i }>Player 1: {leaderBoard[arb].playerOneScore} | Player 2: {leaderBoard[arb].playerTwoScore}</li>;
           }) : null}
-          <li>P1 Score: {this.props.xWins} ; P2 Score: </li>
+          <li>P1 Score: {this.props.xWins} P2 Score: </li>
         </ul>
       </section>
     );

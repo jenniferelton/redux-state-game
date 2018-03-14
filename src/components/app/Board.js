@@ -62,7 +62,7 @@ class Board extends PureComponent {
             {this.renderSquare(8)}
           </div>
           <button className="button" onClick={() => this.handleReset()}>RESET</button>
-          <button className="button" onClick={() => this.handleMatchEnd()}>MATCH END</button>
+          <button className="button" onClick={() => this.handleMatchEnd()}>SAVE MATCH</button>
           <button className="button" onClick={() => this.handleLoadMatch()}>LOAD</button>
 
         </div>
