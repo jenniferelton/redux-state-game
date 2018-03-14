@@ -17,7 +17,6 @@ class GameHistory extends PureComponent {
     }
     return (
       <section>
-        <button className="button" onClick={() => this.handleLoadMatch()}>LOAD</button>
         <ul>
           {leaderBoardKeys.length > 0 ? leaderBoardKeys.map((arb, i) => {
             return <li key={ i }>Player 1: {leaderBoard[arb].playerOneScore} | Player 2: {leaderBoard[arb].playerTwoScore}</li>;
@@ -28,18 +27,6 @@ class GameHistory extends PureComponent {
     );
   }
 }
-
-// render() {
-//   const { articles } = this.props;
-
-//   return (
-//     <ul>
-//       {articles.map((article, i) => (
-//         <Article key={i} article={article}/>
-//       ))}
-//     </ul>
-//   );
-// }
 
 function mapStateToProps(state) {
   return {
