@@ -2,6 +2,7 @@ export const CHOICE = 'CHOICE';
 export const WINNER_WINNER_CHICKEN_DINNER = 'WINNER_WINNER_CHICKEN_DINNER';
 export const RESET = 'RESET';
 export const TIE = 'TIE';
+export const MATCH_END = 'MATCH_END';
 
 export const initialState = {
   squares: Array(9).fill(null),

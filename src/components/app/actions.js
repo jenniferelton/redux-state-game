@@ -1,4 +1,5 @@
-import { CHOICE, RESET, WINNER_WINNER_CHICKEN_DINNER, TIE } from './reducers';
+import { CHOICE, RESET, WINNER_WINNER_CHICKEN_DINNER, TIE, MATCH_END } from './reducers';
+import { save } from '../services/gameApi';
 
 export function takeTurns(id) {
   return (dispatch, getState) => {
@@ -9,7 +10,6 @@ export function takeTurns(id) {
     });
 
     const { squares, xWins, oWins } = getState().game;
-    console.log(squares);
     const winner = checkWinner(squares);
 
     if(winner !== null) {
@@ -20,7 +20,6 @@ export function takeTurns(id) {
     }
 
     if(squares.includes(null) === false && winner === null) {
-      console.log('tie');
       dispatch({
         type: TIE
       });
@@ -42,12 +41,33 @@ export function checkWinner(squares) {
   for(let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      endMatch();
       return squares[a];
     }
   }
   return null;
 }
 
+export function endMatch() {
+  return (dispatch, getState) => {
+    const { xWins, oWins } = getState().game;
+
+    const match = {
+      playerOneScore: xWins,
+      playerTwoScore: oWins
+    };
+    
+    console.log(match);
+  
+    // dispatch({
+    //   type: MATCH_END,
+    //   payload: save(match).then(({ name }) => {
+    //     match.key = name;
+    //     return match;
+    //   })
+    // });
+  };
+}
 
 export function reset() {
   return (dispatch, getState) => {
