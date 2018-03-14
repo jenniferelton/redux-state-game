@@ -10,12 +10,18 @@ class GameHistory extends PureComponent {
   }
 
   render() {
-    console.log(this.props);
-    // const { games } = this.props;
+    let leaderBoard = this.props.response;
+    let leaderBoardKeys = [];
+    if(leaderBoard){
+      leaderBoardKeys = Object.keys(leaderBoard);
+    }
     return (
       <section>
         <button className="button" onClick={() => this.handleLoadMatch()}>LOAD</button>
         <ul>
+          {leaderBoardKeys.length > 0 ? leaderBoardKeys.map((arb, i) => {
+            return <li key={ i }>Player 1: {leaderBoard[arb].playerOneScore} | Player 2: {leaderBoard[arb].playerTwoScore}</li>;
+          }) : null}
           <li>P1 Score: {this.props.xWins} ; P2 Score: </li>
         </ul>
       </section>
@@ -37,8 +43,7 @@ class GameHistory extends PureComponent {
 
 function mapStateToProps(state) {
   return {
-    xWins: state.game.xWins,
-    oWins: state.game.oWins,
+    response: state.game.response
   };
 }
 

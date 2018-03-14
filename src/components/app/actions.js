@@ -57,8 +57,6 @@ export function endMatch() {
       playerTwoScore: oWins
     };
 
-    console.log(match);
-  
     dispatch({
       type: MATCH_END,
       payload: save(match).then(({ name }) => {
@@ -75,15 +73,13 @@ export const loadMatch = () => {
     dispatch({
       type: MATCH_LOAD,
       payload: getAll().then(response => {
-        const data = Object.keys(response);
-        console.log(response);
-        return response;
+        let responseObject = {};
+        responseObject.response = response;
+        return responseObject;
       })
     });
   };
 };
-
-
 
 export function reset() {
   return (dispatch, getState) => {
