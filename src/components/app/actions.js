@@ -1,5 +1,5 @@
-import { CHOICE, RESET, WINNER_WINNER_CHICKEN_DINNER, TIE, MATCH_END } from './reducers';
-import { save } from '../services/gameApi';
+import { CHOICE, RESET, WINNER_WINNER_CHICKEN_DINNER, TIE, MATCH_END, MATCH_LOAD } from './reducers';
+import { save, getAll } from '../services/gameApi';
 
 export function takeTurns(id) {
   return (dispatch, getState) => {
@@ -68,6 +68,22 @@ export function endMatch() {
     });
   };
 }
+
+export const loadMatch = () => {
+  return dispatch => {
+
+    dispatch({
+      type: MATCH_LOAD,
+      payload: getAll().then(response => {
+        const data = Object.keys(response);
+        console.log(response);
+        return response;
+      })
+    });
+  };
+};
+
+
 
 export function reset() {
   return (dispatch, getState) => {

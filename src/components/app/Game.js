@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import Board from './Board';
 import '../../index.css';
 import { connect } from 'react-redux';
+import GameHistory from './leaderboard';
 
 class Game extends PureComponent {
   
@@ -17,11 +18,8 @@ class Game extends PureComponent {
             <Board/>
           </div>
         </div>
-        <div className="game-info">
-          <div></div>
-          <ol>
-            
-          </ol>
+        <div className="leaderboard">
+          <GameHistory/>
         </div>
         <footer>
           <small>(c) Jacob & Jenny</small>

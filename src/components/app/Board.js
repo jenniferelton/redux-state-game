@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Square from './square';
 import '../../index.css';
-import { takeTurns, reset, endMatch } from './actions';
+import { takeTurns, reset, endMatch, loadMatch } from './actions';
 
 class Board extends PureComponent {
 
@@ -15,7 +15,6 @@ class Board extends PureComponent {
   }
   
   handleMatchEnd() {
-    console.log(this.props);
     this.props.endMatch();
   }
 
@@ -86,6 +85,9 @@ function mapDispatchToProps(dispatch) {
     },
     endMatch() {
       dispatch(endMatch());
+    },
+    loadMatch() {
+      dispatch(loadMatch());
     }
   };
 }
