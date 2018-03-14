@@ -56,16 +56,16 @@ export function endMatch() {
       playerOneScore: xWins,
       playerTwoScore: oWins
     };
-    
+
     console.log(match);
   
-    // dispatch({
-    //   type: MATCH_END,
-    //   payload: save(match).then(({ name }) => {
-    //     match.key = name;
-    //     return match;
-    //   })
-    // });
+    dispatch({
+      type: MATCH_END,
+      payload: save(match).then(({ name }) => {
+        match.key = name;
+        return match;
+      })
+    });
   };
 }
 
