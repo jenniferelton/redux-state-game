@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Square from './square';
 import '../../index.css';
-import { takeTurns, reset, endMatch, loadMatch } from './actions';
+import { takeTurns, reset, endMatch } from './actions';
 
 class Board extends PureComponent {
 
@@ -16,10 +16,6 @@ class Board extends PureComponent {
   
   handleMatchEnd() {
     this.props.endMatch();
-  }
-
-  handleLoadMatch() {
-    this.props.loadMatch();
   }
 
   renderSquare(id) {
@@ -63,8 +59,6 @@ class Board extends PureComponent {
           </div>
           <button className="button" onClick={() => this.handleReset()}>RESET</button>
           <button className="button" onClick={() => this.handleMatchEnd()}>SAVE MATCH</button>
-          <button className="button" onClick={() => this.handleLoadMatch()}>LOAD</button>
-
         </div>
       </section>
     );
@@ -91,15 +85,11 @@ function mapDispatchToProps(dispatch) {
     },
     endMatch() {
       dispatch(endMatch());
-    },
-    loadMatch() {
-      dispatch(loadMatch());
     }
   };
 }
 
 export default connect (
   mapStateToProps,
-  mapDispatchToProps,
-  
+  mapDispatchToProps
 )(Board);

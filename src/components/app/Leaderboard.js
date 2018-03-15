@@ -18,7 +18,7 @@ class GameHistory extends PureComponent {
     }
     return (
       <section>
-        <ul>
+        <ul className="nav">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/Game">Game</Link></li>
           <li><Link to="/Leaderboard">Leaderboard</Link></li>
@@ -29,6 +29,7 @@ class GameHistory extends PureComponent {
           }) : null}
           <li>Player saved{this.props.xWins} scores </li>
         </ul>
+        {this.handleLoadMatch()}
       </section>
     );
   }
@@ -51,6 +52,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-  // ({ matches }) => ({ matches }),
-  // { loadMatch }
 ) (GameHistory);

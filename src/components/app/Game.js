@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import Board from './Board';
 import '../../index.css';
 import { connect } from 'react-redux';
-import GameHistory from './leaderboard';
 import { Link } from 'react-router-dom';
+import '../../index.css';
 
 class Game extends PureComponent {
   
@@ -13,7 +13,7 @@ class Game extends PureComponent {
       <section className="game">
         <header>
           <h1> J&J Tic Tac Toe</h1>
-          <ul>
+          <ul className="nav">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/Game">Game</Link></li>
             <li><Link to="/Leaderboard">Leaderboard</Link></li>
@@ -24,9 +24,9 @@ class Game extends PureComponent {
             <Board/>
           </div>
         </div>
-        <div className="leader">
+        {/* <div className="leader">
           <GameHistory/>
-        </div>
+        </div> */}
         <footer>
           <small>(c) Jacob & Jenny</small>
         </footer>
