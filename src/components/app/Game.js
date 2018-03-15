@@ -3,7 +3,7 @@ import Board from './Board';
 import '../../index.css';
 import { connect } from 'react-redux';
 import GameHistory from './leaderboard';
-import { Route, IndexRoute, Link } from 'react-router';
+// import { Route, IndexRoute, Link } from 'react-router';
 import Home from './Home';
 
 class Game extends PureComponent {
@@ -15,11 +15,11 @@ class Game extends PureComponent {
         <header>
           <h1> J&J Tic Tac Toe</h1>
           <div>
-            <ul>
+            {/* <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/game">Game</Link></li>
               <li><Link to="/leaderboard">leaderboard</Link></li>
-            </ul>
+            </ul> */}
           </div>
         </header>
         <div className="container">
@@ -33,11 +33,11 @@ class Game extends PureComponent {
         <footer>
           <small>(c) Jacob & Jenny</small>
         </footer>
-        <Route path="/" component={Home}>
+        {/* <Route path="/" component={Home}>
           <IndexRoute component={Home}></IndexRoute>
           <Route path="/game" component={Game}></Route>
           <Route path="/leaderboard" component={GameHistory}></Route>
-        </Route>
+        </Route> */}
       </section>
     );
   }
