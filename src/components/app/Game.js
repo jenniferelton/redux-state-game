@@ -27,7 +27,7 @@ class Game extends PureComponent {
             <Board/>
           </div>
         </div>
-        <div className="leaderboard">
+        <div className="leader">
           <GameHistory/>
         </div>
         <footer>

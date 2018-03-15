@@ -18,6 +18,10 @@ class Board extends PureComponent {
     this.props.endMatch();
   }
 
+  handleLoadMatch() {
+    this.props.loadMatch();
+  }
+
   renderSquare(id) {
     return (
       <Square value={this.props.squares[id]}
@@ -58,7 +62,9 @@ class Board extends PureComponent {
             {this.renderSquare(8)}
           </div>
           <button className="button" onClick={() => this.handleReset()}>RESET</button>
-          <button className="button" onClick={() => this.handleMatchEnd()}>MATCH END</button>
+          <button className="button" onClick={() => this.handleMatchEnd()}>SAVE MATCH</button>
+          <button className="button" onClick={() => this.handleLoadMatch()}>LOAD</button>
+
         </div>
       </section>
     );
@@ -95,4 +101,5 @@ function mapDispatchToProps(dispatch) {
 export default connect (
   mapStateToProps,
   mapDispatchToProps,
+  
 )(Board);
