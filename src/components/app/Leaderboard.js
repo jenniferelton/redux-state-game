@@ -29,18 +29,6 @@ class GameHistory extends PureComponent {
   }
 }
 
-// render() {
-//   const { articles } = this.props;
-
-//   return (
-//     <ul>
-//       {articles.map((article, i) => (
-//         <Article key={i} article={article}/>
-//       ))}
-//     </ul>
-//   );
-// }
-
 function mapStateToProps(state) {
   return {
     response: state.game.response
