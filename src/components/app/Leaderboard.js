@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { loadMatch } from './actions';
 import '../../index.css';
+import { Link } from 'react-router-dom';
 
 class GameHistory extends PureComponent {
 
@@ -17,6 +18,11 @@ class GameHistory extends PureComponent {
     }
     return (
       <section>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/Game">Game</Link></li>
+          <li><Link to="/Leaderboard">Leaderboard</Link></li>
+        </ul>
         <ul>
           {leaderBoardKeys.length > 0 ? leaderBoardKeys.map((arb, i) => {
             return <li key={ i }>Player 1: score: {leaderBoard[arb].playerOneScore} vs. Player 2: score: {leaderBoard[arb].playerTwoScore}</li>;

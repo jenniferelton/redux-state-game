@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Home extends PureComponent {
 
@@ -8,7 +9,10 @@ class Home extends PureComponent {
     return (
       <section className="home">
         <div>
-          <h1>home</h1>
+          <h1>Home</h1>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/Game">Game</Link></li>
+          <li><Link to="/Leaderboard">Leaderboard</Link></li>
         </div>
       </section>
     );
